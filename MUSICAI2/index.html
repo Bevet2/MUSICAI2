@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSICAI2</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 MUSICAI2</h1>
+            <p>Transform and create music with AI</p>
+        </header>
+
+        <main>
+            <!-- Mode Selection -->
+            <div class="mode-selector">
+                <button id="remixMode" class="mode-btn active">Remix Mode</button>
+                <button id="createMode" class="mode-btn">Create Mode</button>
+            </div>
+
+            <!-- YouTube Search -->
+            <div class="search-section">
+                <input type="text" id="searchInput" placeholder="Search for a song on YouTube...">
+                <button id="searchBtn">Search</button>
+                <div id="searchResults" class="results-grid"></div>
+            </div>
+
+            <!-- Remix Mode Section -->
+            <div id="remixSection" class="mode-section">
+                <h2>Transform Song</h2>
+                <div class="selected-song"></div>
+                <div class="genre-selector">
+                    <label for="genreSelect">Target Genre:</label>
+                    <select id="genreSelect"></select>
+                </div>
+                <button id="remixBtn" class="action-btn" disabled>Transform Song</button>
+            </div>
+
+            <!-- Create Mode Section -->
+            <div id="createSection" class="mode-section hidden">
+                <h2>Create New Song</h2>
+                <div class="selected-songs"></div>
+                <button id="addSongBtn" class="secondary-btn">+ Add Another Song</button>
+                
+                <div class="vocals-section">
+                    <h3>Add Vocals</h3>
+                    <textarea id="lyricsInput" placeholder="Enter lyrics for AI vocals..."></textarea>
+                    <div class="voice-style">
+                        <label for="voiceSelect">Voice Style:</label>
+                        <select id="voiceSelect"></select>
+                    </div>
+                </div>
+                <button id="createBtn" class="action-btn" disabled>Create Song</button>
+            </div>
+
+            <!-- Processing Section -->
+            <div id="processingSection" class="hidden">
+                <div class="loader"></div>
+                <p>Processing your music...</p>
+            </div>
+
+            <!-- Result Section -->
+            <div id="resultSection" class="hidden">
+                <h2>Your Processed Song</h2>
+                <audio id="audioPlayer" controls></audio>
+                <button id="downloadBtn" class="action-btn">Download</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
